@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(#31011e, #0a0120);
+    height: 100vh;
+    font-family: system-ui;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    position: fixed;
+    width: 95%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px auto; /* مركز الهامش */
+}
+
+header .logo {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+header ul li {
+    margin-right: 30px;
+}
+
+header ul li a {
+    padding: 6px 15px;
+    border-radius: 20px;
+}
+
+header ul li a:hover {
+    background: white;
+    color: #31011e;
+}
+
+header ul li a:hover,
+.active {
+    background: white;
+    color: #31011e;
+}
+
+.main {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.main::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(to top, #31011e, transparent);
+}
+
+.main img {
+    position: absolute;
+    width: 100%;
+    height: auto; /* استخدام auto بدلاً من 100vh */
+    max-height: 100%; /* ضمان عدم تجاوز الارتفاع */
+    object-fit: cover; /* الحفاظ على نسبة العرض إلى الارتفاع */
+}
+
+#moon {
+    mix-blend-mode: screen;
+}
+
+.nouvil {
+    position: absolute;
+    color: white;
+    font-size: 30px; /* يمكن تقليل الحجم في استعلام الوسائط */
+    text-transform: uppercase;
+    transform: translateY(-130px);
+}
+
+.content {
+    color: white;
+    padding: 30px; /* يمكن تقليل الحشو في استعلام الوسائط */
+}
+
+.content h2 {
+    margin: 20px 0; /* تحسين الهوامش */
+    font-size: 30px; /* يمكن تقليل الحجم في استعلام الوسائط */
+}
+
+.content p {
+    margin-bottom: 20px; /* تحسين الهوامش */
+}
+
+/* استعلامات الوسائط لتحسين الاستجابة على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    
+   header {
+        flex-direction: column; /* تغيير الاتجاه إلى عمودي */
+        align-items: flex-start; /* محاذاة العناصر إلى اليسار */
+        margin-top: 20px; /* تعديل الهامش العلوي */
+   }
+
+   header ul li {
+       margin-right: 15px; /* تقليل الهامش الجانبي */
+       margin-bottom: 10px; /* إضافة هامش سفلي */
+   }
+
+   .nouvil {
+       font-size: 24px; /* تقليل حجم الخط */
+       transform: translateY(-80px); /* تعديل موضع النص */
+   }
+
+   .content {
+       padding-left: 15px; 
+       padding-right: 15px; 
+   }
+
+   .content h2 {
+       font-size: 24px; /* تقليل حجم الخط */
+   }
+
+   .content p {
+       font-size: 16px; /* تقليل حجم الخط للنصوص */
+   }
+}
+
+@media (max-width: 480px) {
+    
+   header .logo {
+       font-size: 24px; /* تقليل حجم الخط للشعار */
+   }
+
+   header ul li a {
+       padding: 4px 10px; /* تقليل الحشو للروابط */
+   }
+
+   .nouvil {
+       font-size: 20px; /* تقليل حجم الخط أكثر للأجهزة الصغيرة */
+   }
+
+   .content h2 {
+       font-size: 22px; /* تقليل حجم الخط أكثر للأجهزة الصغيرة */
+   }
+
+   .content p {
+       font-size: 14px; /* تقليل حجم الخط للنصوص أكثر للأجهزة الصغيرة */
+   }
+}
